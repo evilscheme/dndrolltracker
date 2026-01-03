@@ -1,53 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>D&D Roll Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>D&D Roll Tracker</h1>
-            <p class="subtitle">Track your party's luck with D20 rolls</p>
-        </header>
-
-        <section class="add-character">
-            <h2>Add Character</h2>
-            <form id="add-character-form">
-                <input type="text" id="character-name" placeholder="Character name" required>
-                <button type="submit">Add Character</button>
-            </form>
-        </section>
-
-        <section class="roll-section">
-            <h2>Record a Roll</h2>
-            <form id="roll-form">
-                <select id="character-select" required>
-                    <option value="">Select character...</option>
-                </select>
-                <input type="number" id="roll-value" min="1" max="20" placeholder="Roll (1-20)" required>
-                <button type="submit">Record Roll</button>
-            </form>
-        </section>
-
-        <section class="leaderboard">
-            <h2>Luck Leaderboard</h2>
-            <p class="expected-info">Expected D20 average: <strong>10.5</strong></p>
-            <div id="leaderboard-container">
-                <p class="empty-state">No characters added yet. Add a character to start tracking!</p>
-            </div>
-        </section>
-
-        <section class="character-details">
-            <h2>Character Details</h2>
-            <div id="character-details-container">
-                <p class="empty-state">Character stats will appear here after recording rolls.</p>
-            </div>
-        </section>
-    </div>
-
-    <script src="app.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
