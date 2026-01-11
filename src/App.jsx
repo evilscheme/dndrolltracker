@@ -3,6 +3,7 @@ import AddCharacterForm from './components/AddCharacterForm'
 import RollForm from './components/RollForm'
 import Leaderboard from './components/Leaderboard'
 import CharacterDetails from './components/CharacterDetails'
+import Actions from './components/Actions'
 
 const STORAGE_KEY = 'dndRollTracker'
 
@@ -70,6 +71,19 @@ function App() {
     }
   }
 
+  const resetAllRolls = () => {
+    setCharacters(prev => {
+      const updated = {}
+      Object.values(prev).forEach(char => {
+        updated[char.name] = {
+          ...char,
+          rolls: []
+        }
+      })
+      return updated
+    })
+  }
+
   const characterList = Object.keys(characters).sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase())
   )
@@ -89,6 +103,11 @@ function App() {
       />
 
       <Leaderboard characters={characters} />
+
+      <Actions
+        characters={characters}
+        onReset={resetAllRolls}
+      />
 
       <CharacterDetails
         characters={characters}
